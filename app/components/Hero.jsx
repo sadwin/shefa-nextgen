@@ -52,11 +52,11 @@ export default function Hero() {
             <span className="flex items-center gap-1.5"><span className="text-[#0F172A] text-xs font-black">✓</span> Ready in minutes</span>
           </div>
         </div>
-               {/* ПРАВАЯ КОЛОНКА — Картинка и оверлеи в левом краю кадра */}
+                      {/* ПРАВАЯ КОЛОНКА — Картинка смартфона и сочные дизайнерские оверлеи */}
         <div className="lg:col-span-7 relative w-full flex justify-center items-center mt-8 lg:mt-0 z-10">
           
-          {/* Контейнер с пропорциями изображения */}
-          <div className="relative w-full max-w-[640px] aspect-[16/9] rounded-[24px] shadow-[0_30px_70px_rgba(0,0,0,0.08)] border border-slate-100">
+          {/* Контейнер с пропорциями изображения и мягким свечением стола на фоне */}
+          <div className="relative w-full max-w-[640px] aspect-[16/9] rounded-[24px] shadow-[0_35px_80px_-15px_rgba(15,23,42,0.12)] border border-slate-200/50 group">
             
             {/* Твоё качественное ИИ-изображение смартфона и тейбл-тента */}
             <Image
@@ -64,14 +64,17 @@ export default function Hero() {
               alt="SHEFA NextGen Premium 3D Scene"
               fill
               priority
-              className="object-cover object-center select-none pointer-events-none"
+              className="object-cover object-center select-none pointer-events-none transition-transform duration-700 group-hover:scale-[1.01]"
               sizes="(max-w: 1024px) 100vw, 620px"
             />
 
-            {/* ПЛАШКА 1: Google Rating (Уведена в самый левый край, на листья, за пределы дисплея) */}
-            <div className="absolute top-[22%] left-[-40px] hidden xl:flex bg-white/95 backdrop-blur-md shadow-[0_15px_35px_rgba(15,23,42,0.08)] rounded-[20px] p-3.5 border border-slate-100/85 items-center space-x-3 w-[225px] z-30 animate-fade-in">
-              <div className="bg-white shadow-[0_2px_8px_rgba(0,0,0,0.04)] w-9 h-9 flex items-center justify-center rounded-xl border border-slate-100 flex-shrink-0">
-                <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24">
+            {/* Глянцевый блик поверх всей сцены для эффекта дороговизны */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/10 pointer-events-none" />
+
+            {/* ПЛАШКА 1: Google Rating (Ультра-сочная, эффект матового стекла + цветной контур) */}
+            <div className="absolute top-[24%] left-[-45px] hidden xl:flex bg-white/85 backdrop-blur-lg shadow-[0_20px_40px_-5px_rgba(15,23,42,0.1),0_0_1px_rgba(0,0,0,0.1)] rounded-[22px] p-4 border border-blue-500/10 flex items-center space-x-3.5 w-[235px] z-30 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_25px_50px_-5px_rgba(59,130,246,0.15)]">
+              <div className="bg-gradient-to-b from-white to-slate-50 shadow-[0_4px_12px_rgba(0,0,0,0.04)] w-10 h-10 flex items-center justify-center rounded-xl border border-slate-100 flex-shrink-0">
+                <svg className="w-[19px] h-[19px]" viewBox="0 0 24 24">
                   <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.53-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-8.67z"/>
                   <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.11 0-5.74-2.11-6.68-4.96H1.21v3.15C3.18 21.88 7.31 24 12 24z"/>
                   <path fill="#FBBC05" d="M5.32 14.24A7.16 7.16 0 0 1 4.93 12c0-.79.13-1.57.39-2.31V6.54H1.21A11.94 11.94 0 0 0 0 12c0 1.92.45 3.74 1.21 5.46l4.11-3.22z"/>
@@ -80,35 +83,35 @@ export default function Hero() {
               </div>
               <div className="flex flex-col justify-center">
                 <div className="flex items-center space-x-1">
-                  <span className="font-black text-sm text-[#0F172A] leading-none">4.8</span>
-                  <div className="text-amber-400 text-[10px] tracking-tighter flex space-x-0.5">
+                  <span className="font-black text-[15px] text-[#0F172A] tracking-tight leading-none">4.8</span>
+                  <div className="text-amber-400 text-[11px] tracking-tighter flex space-x-0.5 pb-0.5">
                     <span>★</span><span>★</span><span>★</span><span>★</span><span>★</span>
                   </div>
                 </div>
-                <p className="text-[8px] text-[#94A3B8] font-bold mt-1 flex items-center gap-1">
-                  +124 new reviews this month <span className="text-green-500 text-[10px]">📈</span>
+                <p className="text-[9px] text-[#64748B] font-bold mt-1 flex items-center gap-1">
+                  +124 new reviews this month <span className="text-emerald-500 font-extrabold text-[10px]">📈</span>
                 </p>
               </div>
             </div>
 
-            {/* ПЛАШКА 2: New Customer Added (Уведена в самый левый край, ниже первой плашки) */}
-            <div className="absolute bottom-[22%] left-[-40px] hidden xl:flex bg-white/95 backdrop-blur-md shadow-[0_15px_35px_rgba(15,23,42,0.08)] rounded-[20px] p-3 border border-slate-100/85 items-center space-x-3 w-[225px] z-30 animate-fade-in">
-              <div className="bg-emerald-50 text-emerald-500 w-8 h-8 rounded-xl flex items-center justify-center text-sm border border-emerald-100/20 flex-shrink-0">
+            {/* ПЛАШКА 2: New Customer Added (Матовое стекло + изумрудный контур) */}
+            <div className="absolute bottom-[20%] left-[2.5%] xl:left-[-35px] bg-white/85 backdrop-blur-lg shadow-[0_20px_40px_-5px_rgba(15,23,42,0.1),0_0_1px_rgba(0,0,0,0.1)] rounded-[22px] p-3.5 border border-emerald-500/10 flex items-center space-x-3.5 w-[235px] z-30 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_25px_50px_-5px_rgba(16,185,129,0.15)]">
+              <div className="bg-gradient-to-b from-emerald-50 to-emerald-100/50 text-emerald-600 w-9 h-9 rounded-xl flex items-center justify-center text-sm border border-emerald-200/40 flex-shrink-0 shadow-inner">
                 👤
               </div>
               <div className="flex flex-col justify-center">
-                <p className="text-[8px] text-slate-400 font-bold uppercase tracking-wider">New customer added</p>
-                <p className="text-[11px] font-black text-slate-900 mt-0.5 tracking-tight">sophie@email.com</p>
+                <p className="text-[8px] text-[#94A3B8] font-black uppercase tracking-wider">New customer added</p>
+                <p className="text-xs font-black text-[#0F172A] mt-0.5 tracking-tight">sophie@email.com</p>
               </div>
             </div>
 
-            {/* Мобильная адаптация плашек: на мелких экранах, чтобы не ломать картинку, просто выстроим их внизу аккуратно */}
-            <div className="xl:hidden absolute bottom-2 inset-x-2 flex justify-center gap-2">
-              <div className="bg-white/95 backdrop-blur-sm p-1.5 rounded-xl border border-slate-100 text-[8px] font-bold flex items-center space-x-1 shadow-sm">
-                <span>⭐ 4.8</span>
+            {/* Адаптив под мобилки */}
+            <div className="xl:hidden absolute bottom-3 inset-x-3 flex justify-center gap-2.5">
+              <div className="bg-white/90 backdrop-blur-sm py-1.5 px-3 rounded-xl border border-slate-200/60 text-[9px] font-black text-slate-800 shadow-sm flex items-center space-x-1">
+                <span className="text-blue-500">G</span> <span>4.8</span> <span className="text-amber-400">★★★★★</span>
               </div>
-              <div className="bg-white/95 backdrop-blur-sm p-1.5 rounded-xl border border-slate-100 text-[8px] font-bold flex items-center space-x-1 shadow-sm">
-                <span>👤 Contact Added</span>
+              <div className="bg-white/90 backdrop-blur-sm py-1.5 px-3 rounded-xl border border-slate-200/60 text-[9px] font-black text-slate-800 shadow-sm flex items-center space-x-1">
+                <span className="text-emerald-500">👤</span> <span>Contact Added</span>
               </div>
             </div>
 
