@@ -52,7 +52,7 @@ export default function Hero() {
             <span className="flex items-center gap-1.5"><span className="text-[#0F172A] text-xs font-black">✓</span> Ready in minutes</span>
           </div>
         </div>
-        {/* ПРАВАЯ КОЛОНКА — Твоя новая идеальная 3D-картинка и векторные оверлеи */}
+             {/* ПРАВАЯ КОЛОНКА — Твоя новая идеальная 3D-картинка и векторные оверлеи */}
         <div className="lg:col-span-7 relative w-full flex justify-center items-center mt-8 lg:mt-0 z-10">
           
           {/* Контейнер с пропорциями изображения */}
@@ -68,8 +68,8 @@ export default function Hero() {
               sizes="(max-w: 1024px) 100vw, 620px"
             />
 
-            {/* ПЛАШКА 1: Google Rating (Позиционируется абсолютно поверх правого верхнего угла коробки) */}
-            <div className="absolute top-[28%] right-[2.5%] xl:right-[-10px] bg-white/95 backdrop-blur-md shadow-[0_15px_35px_rgba(15,23,42,0.08)] rounded-[20px] p-3.5 border border-slate-100/85 flex items-center space-x-3 w-[225px] z-30 animate-fade-in">
+            {/* ПЛАШКА 1: Google Rating (Теперь смещена влево, над листьями, левее смартфона) */}
+            <div className="absolute top-[20%] left-[2.5%] xl:left-[-20px] bg-white/95 backdrop-blur-md shadow-[0_15px_35px_rgba(15,23,42,0.08)] rounded-[20px] p-3.5 border border-slate-100/85 flex items-center space-x-3 w-[225px] z-30 animate-fade-in">
               <div className="bg-white shadow-[0_2px_8px_rgba(0,0,0,0.04)] w-9 h-9 flex items-center justify-center rounded-xl border border-slate-100 flex-shrink-0">
                 <svg className="w-[18px] h-[18px]" viewBox="0 0 24 24">
                   <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.53-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-8.67z"/>
@@ -91,8 +91,8 @@ export default function Hero() {
               </div>
             </div>
 
-            {/* ПЛАШКА 2: New Customer Added (Позиционируется абсолютно поверх нижнего правого угла коробки) */}
-            <div className="absolute bottom-[8%] right-[2.5%] xl:right-[-10px] bg-white/95 backdrop-blur-md shadow-[0_15px_35px_rgba(15,23,42,0.08)] rounded-[20px] p-3 border border-slate-100/85 flex items-center space-x-3 w-[225px] z-30 animate-fade-in">
+            {/* ПЛАШКА 2: New Customer Added (Теперь смещена влево, под первую плашку, левее смартфона) */}
+            <div className="absolute bottom-[20%] left-[2.5%] xl:left-[-20px] bg-white/95 backdrop-blur-md shadow-[0_15px_35px_rgba(15,23,42,0.08)] rounded-[20px] p-3 border border-slate-100/85 flex items-center space-x-3 w-[225px] z-30 animate-fade-in">
               <div className="bg-emerald-50 text-emerald-500 w-8 h-8 rounded-xl flex items-center justify-center text-sm border border-emerald-100/20 flex-shrink-0">
                 👤
               </div>
