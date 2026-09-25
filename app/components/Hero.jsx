@@ -66,27 +66,46 @@ export default function Hero() {
       </div>
 
       {/* 2. МОБИЛЬНАЯ СЕКЦИЯ (Отображается только на телефонах) */}
-      <div className="w-full bg-white lg:hidden">
-        {/* Текстовый блок на чистом светлом фоне */}
-        <div className="px-6 pt-12 pb-8 space-y-5">
-          <div className="text-[10px] font-black tracking-[0.25em] text-slate-400 uppercase">
-            AUTOMATE • CONNECT • GROW
+      <div className="w-full lg:hidden">
+        
+        {/* Главный мобильный экран с сочным смуз-бэкграундом стола и растений */}
+        <div 
+          className="relative w-full overflow-hidden px-6 pt-16 pb-12 space-y-5 min-h-[520px] flex flex-col justify-center"
+          style={{
+            backgroundImage: "url('/hero-bg-desktop.jpg')",
+            backgroundPosition: 'left center',
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat'
+          }}
+        >
+          {/* Полупрозрачная матовая iOS подложка, чтобы текст кристально читался на фоне листьев */}
+          <div className="absolute inset-0 bg-white/80 z-0 backdrop-blur-[2px]" />
+
+          <div className="relative z-10 space-y-5">
+            <div className="text-[10px] font-black tracking-[0.25em] text-slate-500 uppercase">
+              AUTOMATE • CONNECT • GROW
+            </div>
+            <h1 className="text-4xl font-black text-slate-900 tracking-tight leading-none">
+              Turn every <br />
+              customer visit <br />
+              <span className="text-slate-950">into growth.</span>
+            </h1>
+            <p className="text-sm text-slate-800 leading-relaxed font-bold">
+              SHEFA NextGen Systems helps local businesses get more Google reviews, collect customer contacts and bring clients back.
+            </p>
+            <button className="w-full bg-slate-950 text-white text-xs font-bold py-4 rounded-full shadow-lg">
+              See How It Works →
+            </button>
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-[10px] font-bold text-slate-500 pt-4 border-t border-slate-200/60">
+              <span>✓ No setup fees</span>
+              <span>✓ Cancel anytime</span>
+              <span>✓ Ready in minutes</span>
+            </div>
           </div>
-          <h1 className="text-4xl font-black text-slate-900 tracking-tight leading-none">
-            Turn every <br />
-            customer visit <br />
-            <span className="text-slate-950">into growth.</span>
-          </h1>
-          <p className="text-sm text-slate-600 leading-relaxed font-semibold">
-            SHEFA NextGen Systems helps local businesses get more Google reviews, collect customer contacts and bring clients back.
-          </p>
-          <button className="w-full bg-slate-950 text-white text-xs font-bold py-4 rounded-full shadow-lg">
-            See How It Works →
-          </button>
         </div>
 
-        {/* Отдельный сочный мобильный блок с отцентрованным смартфоном */}
-        <div className="px-6 pb-12 flex flex-col items-center">
+        {/* Отдельный мобильный блок: скроллим дальше — и выкатывается твой отцентрованный 3D-смартфон с QR */}
+        <div className="px-6 py-12 bg-white flex flex-col items-center border-t border-slate-100">
           <div 
             className="w-full max-w-[380px] aspect-[4/5] rounded-[32px] shadow-[0_25px_50px_rgba(15,23,42,0.12)] border border-slate-100"
             style={{
