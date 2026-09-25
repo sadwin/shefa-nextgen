@@ -68,18 +68,18 @@ export default function Hero() {
       {/* 2. МОБИЛЬНАЯ СЕКЦИЯ (Отображается только на телефонах) */}
       <div className="w-full lg:hidden">
         
-        {/* Главный мобильный экран с сочным смуз-бэкграундом стола и растений */}
+        {/* Главный мобильный экран — ЖЕСТКОЕ КАДРИРОВАНИЕ ЛЕВОЙ ЧАСТИ */}
         <div 
-          className="relative w-full overflow-hidden px-6 pt-16 pb-12 space-y-5 min-h-[520px] flex flex-col justify-center"
+          className="relative w-full overflow-hidden px-6 pt-16 pb-12 space-y-5 min-h-[540px] flex flex-col justify-center"
           style={{
             backgroundImage: "url('/hero-bg-desktop.jpg')",
-            backgroundPosition: 'left center',
-            backgroundSize: 'cover',
+            backgroundPosition: '0% center', /* Фиксируем строго левый край (дерево и листья), прячем телефон */
+            backgroundSize: '240% auto',      /* Искусственно растягиваем панораму, чтобы телефон гарантированно ушел вправо за экран */
             backgroundRepeat: 'no-repeat'
           }}
         >
-          {/* Полупрозрачная матовая iOS подложка, чтобы текст кристально читался на фоне листьев */}
-          <div className="absolute inset-0 bg-white/80 z-0 backdrop-blur-[2px]" />
+          {/* Матовая iOS подложка для идеального контраста */}
+          <div className="absolute inset-0 bg-white/85 z-0 backdrop-blur-[3px]" />
 
           <div className="relative z-10 space-y-5">
             <div className="text-[10px] font-black tracking-[0.25em] text-slate-500 uppercase">
@@ -104,7 +104,7 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Отдельный мобильный блок: скроллим дальше — и выкатывается твой отцентрованный 3D-смартфон с QR */}
+        {/* Отдельный мобильный блок с отцентрованным смартфоном и QR */}
         <div className="px-6 py-12 bg-white flex flex-col items-center border-t border-slate-100">
           <div 
             className="w-full max-w-[380px] aspect-[4/5] rounded-[32px] shadow-[0_25px_50px_rgba(15,23,42,0.12)] border border-slate-100"
