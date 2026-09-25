@@ -69,24 +69,24 @@ export default function Hero() {
         {/* Главный мобильный контейнер */}
         <div className="relative w-full px-6 pt-16 pb-12 min-h-[540px] flex flex-col justify-center overflow-hidden">
           
-          {/* ЖЕСТКОЕ ФИЗИЧЕСКОЕ ПОЗИЦИОНИРОВАНИЕ КАРТИНКИ */}
-          <div className="absolute inset-y-0 left-0 w-[250vw] h-full z-0 select-none pointer-events-none">
+          {/* Позиционирование фоновой картинки со столом */}
+          <div className="absolute inset-y-0 left-0 w-[230vw] h-full z-0 select-none pointer-events-none">
             <Image
               src="/hero-bg-desktop.jpg"
               alt="Background Showcase"
               fill
               priority
               className="object-cover object-left"
-              sizes="250vw"
+              sizes="230vw"
             />
           </div>
 
-          {/* МАТОВАЯ ПОДЛОЖКА НА 100% ВЫСОТЫ И ШИРИНЫ — Перекрывает картинку намертво */}
-          <div className="absolute inset-0 bg-white/90 z-10 backdrop-blur-[4px] border-b border-slate-100" />
+          {/* ЛЁГКАЯ МАТОВАЯ ПОДЛОЖКА (Меньше размытия и прозрачности для чёткого бэка) */}
+          <div className="absolute inset-0 bg-white/70 z-10 backdrop-blur-[1.5px] border-b border-slate-100" />
 
-          {/* ЖИВОЙ ТЕКСТ (Поверх подложки благодаря z-20) */}
+          {/* Контент поверх подложки */}
           <div className="relative z-20 space-y-5">
-            <div className="text-[10px] font-black tracking-[0.25em] text-slate-500 uppercase">
+            <div className="text-[10px] font-black tracking-[0.25em] text-slate-600 uppercase">
               AUTOMATE • CONNECT • GROW
             </div>
             <h1 className="text-4xl font-black text-slate-900 tracking-tight leading-none">
@@ -94,13 +94,13 @@ export default function Hero() {
               customer visit <br />
               <span className="text-slate-950">into growth.</span>
             </h1>
-            <p className="text-sm text-slate-800 leading-relaxed font-bold">
+            <p className="text-sm text-slate-900 leading-relaxed font-bold">
               SHEFA NextGen Systems helps local businesses get more Google reviews, collect customer contacts and bring clients back.
             </p>
             <button className="w-full bg-slate-950 text-white text-xs font-bold py-4 rounded-full shadow-lg">
               See How It Works →
             </button>
-            <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-[10px] font-bold text-slate-500 pt-4 border-t border-slate-200/60">
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-[10px] font-black text-slate-600 pt-4 border-t border-slate-200/40">
               <span>✓ No setup fees</span>
               <span>✓ Cancel anytime</span>
               <span>✓ Ready in minutes</span>
