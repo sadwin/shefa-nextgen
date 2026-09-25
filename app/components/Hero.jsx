@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import Image from 'next/image';
 
 export default function Hero() {
   return (
@@ -15,7 +16,6 @@ export default function Hero() {
           backgroundRepeat: 'no-repeat'
         }}
       >
-        {/* Мягкий градиент, чтобы темный текст идеально читался поверх текстуры дерева */}
         <div 
           className="absolute inset-0 z-0"
           style={{
@@ -23,7 +23,6 @@ export default function Hero() {
           }}
         />
 
-        {/* Контентная сетка десктопа */}
         <div className="relative z-10 max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center min-h-[640px] lg:min-h-[750px]">
           <div className="lg:col-span-5 space-y-6">
             <div className="text-[11px] font-black tracking-[0.25em] text-slate-500 uppercase">
@@ -58,7 +57,6 @@ export default function Hero() {
           <div className="lg:col-span-7" />
         </div>
 
-        {/* Декоративный наклонный текст в верхнем правом углу на ПК */}
         <div className="absolute right-16 top-8 text-right select-none pointer-events-none z-20" style={{ transform: 'rotate(6deg)' }}>
           <span className="font-serif italic text-[28px] text-slate-900 leading-none block">Happy customers.</span>
           <span className="font-sans font-black text-[12px] tracking-[0.18em] text-slate-400 uppercase block mt-1">Stronger businesses.</span>
@@ -66,22 +64,28 @@ export default function Hero() {
       </div>
 
       {/* 2. МОБИЛЬНАЯ СЕКЦИЯ (Отображается только на телефонах) */}
-      <div className="w-full lg:hidden">
+      <div className="w-full lg:hidden bg-white relative">
         
-        {/* Главный мобильный экран — ЖЕСТКОЕ КАДРИРОВАНИЕ ЛЕВОЙ ЧАСТИ */}
-        <div 
-          className="relative w-full overflow-hidden px-6 pt-16 pb-12 space-y-5 min-h-[540px] flex flex-col justify-center"
-          style={{
-            backgroundImage: "url('/hero-bg-desktop.jpg')",
-            backgroundPosition: '0% center', /* Фиксируем строго левый край (дерево и листья), прячем телефон */
-            backgroundSize: '240% auto',      /* Искусственно растягиваем панораму, чтобы телефон гарантированно ушел вправо за экран */
-            backgroundRepeat: 'no-repeat'
-          }}
-        >
-          {/* Матовая iOS подложка для идеального контраста */}
-          <div className="absolute inset-0 bg-white/85 z-0 backdrop-blur-[3px]" />
+        {/* Главный мобильный контейнер */}
+        <div className="relative w-full px-6 pt-16 pb-12 min-h-[540px] flex flex-col justify-center overflow-hidden">
+          
+          {/* ЖЕСТКОЕ ФИЗИЧЕСКОЕ ПОЗИЦИОНИРОВАНИЕ КАРТИНКИ */}
+          <div className="absolute inset-y-0 left-0 w-[250vw] h-full z-0 select-none pointer-events-none">
+            <Image
+              src="/hero-bg-desktop.jpg"
+              alt="Background Showcase"
+              fill
+              priority
+              className="object-cover object-left"
+              sizes="250vw"
+            />
+          </div>
 
-          <div className="relative z-10 space-y-5">
+          {/* МАТОВАЯ ПОДЛОЖКА НА 100% ВЫСОТЫ И ШИРИНЫ — Перекрывает картинку намертво */}
+          <div className="absolute inset-0 bg-white/90 z-10 backdrop-blur-[4px] border-b border-slate-100" />
+
+          {/* ЖИВОЙ ТЕКСТ (Поверх подложки благодаря z-20) */}
+          <div className="relative z-20 space-y-5">
             <div className="text-[10px] font-black tracking-[0.25em] text-slate-500 uppercase">
               AUTOMATE • CONNECT • GROW
             </div>
@@ -105,7 +109,7 @@ export default function Hero() {
         </div>
 
         {/* Отдельный мобильный блок с отцентрованным смартфоном и QR */}
-        <div className="px-6 py-12 bg-white flex flex-col items-center border-t border-slate-100">
+        <div className="px-6 py-12 bg-white flex flex-col items-center relative z-20">
           <div 
             className="w-full max-w-[380px] aspect-[4/5] rounded-[32px] shadow-[0_25px_50px_rgba(15,23,42,0.12)] border border-slate-100"
             style={{
