@@ -62,7 +62,7 @@ export default function HowItWorks() {
           <div className="transform -rotate-6 font-serif italic text-2xl text-slate-800 leading-tight border-l-2 border-slate-950 pl-4 py-1 select-none">
             More reviews.<br />
             More customers.<br />
-            More revenue.
+            More revenue!
           </div>
         </div>
 
