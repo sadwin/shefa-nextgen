@@ -1,7 +1,7 @@
 import { Plus_Jakarta_Sans, Caveat } from 'next/font/google';
 import './globals.css';
 
-// Исправлено: максимьный вес для Plus Jakarta Sans — 800
+// Исправлено: максимьный вес для Plus Jakata Sans — 800
 const sans = Plus_Jakarta_Sans({ 
   subsets: ['latin'], 
   variable: '--font-sans',
