@@ -7,12 +7,14 @@ import FooterLogos from './components/FooterLogos';
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white font-sans antialiased text-slate-900">
+    <div className="min-h-screen bg-[#fafaf8] font-sans antialiased text-[#171717]">
       <Header />
-      <Hero />
-      <Features />
-      <HowItWorks />
-      <RealResults />
+      <main>
+        <Hero />
+        <Features />
+        <HowItWorks />
+        <RealResults />
+      </main>
       <FooterLogos />
     </div>
   );
