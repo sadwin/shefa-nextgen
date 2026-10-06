@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 export default function Header() {
   return (
     <header className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between border-b border-gray-50 bg-white">
@@ -21,10 +23,14 @@ export default function Header() {
           <span>EN</span>
           <span className="text-[10px]">▼</span>
         </div>
-        <button className="bg-black hover:bg-zinc-800 text-white text-sm font-medium py-3 px-6 rounded-full flex items-center space-x-2 transition-all">
-          <span>Start now</span>
-          <span>→</span>
-        </button>
+        <Link 
+  href="https://buy.stripe.com/5kQ8wQcO9eyPeq2a3i6kg01"
+  className="bg-black hover:bg-zinc-800 text-white text-sm font-medium py-3 px-6 rounded-full inline-flex items-center space-x-2 transition-all no-underline"
+>
+  <span>Start now</span>
+  <span>→</span>
+</Link>
+
       </div>
     </header>
   );

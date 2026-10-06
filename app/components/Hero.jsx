@@ -46,7 +46,7 @@ export default function Hero() {
             </p>
             <div className="flex items-center gap-4 pt-2">
               <a 
-                href="https://buy.stripe.com/9B614o7tP1M31Dgdfu6kg00"
+                href="https://buy.stripe.com/5kQ8wQcO9eyPeq2a3i6kg01"
                 onClick={handleScrollToSteps}
                 className="bg-slate-950 hover:bg-black text-white text-[13px] font-bold py-4 px-9 rounded-full shadow-xl transition-all duration-200 active:scale-95 block text-center cursor-pointer"
                 style={{ boxShadow: '0 20px 40px rgba(15,23,42,0.25)' }}
