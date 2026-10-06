@@ -100,7 +100,6 @@ export default function Hero() {
             </p>
             <a 
               href="https://buy.stripe.com/5kQ8wQcO9eyPeq2a3i6kg01"
-              onClick={handleScrollToSteps}
               className="w-full bg-slate-950 text-white text-xs font-bold py-4 rounded-full shadow-lg block text-center cursor-pointer"
             >
               SEO package for 350,00 EUR →
