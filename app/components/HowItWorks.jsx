@@ -154,7 +154,7 @@ export default function HowItWorks() {
         eyebrow: 'HOE HET WERKT',
         title: (
           <>
-            Eén bezoek.
+            Eén bezoek. 
             <span className="block text-[#9b7837]">
               Vier kansen om te groeien.
             </span>
@@ -199,7 +199,7 @@ export default function HowItWorks() {
         eyebrow: 'HOW IT WORKS',
         title: (
           <>
-            One visit.
+            One visit. 
             <span className="block text-[#9b7837]">
               Four opportunities to grow.
             </span>
