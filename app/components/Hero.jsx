@@ -51,7 +51,7 @@ export default function Hero() {
                 className="bg-slate-950 hover:bg-black text-white text-[13px] font-bold py-4 px-9 rounded-full shadow-xl transition-all duration-200 active:scale-95 block text-center cursor-pointer"
                 style={{ boxShadow: '0 20px 40px rgba(15,23,42,0.25)' }}
               >
-                SEO package for 300,00 EUR →
+                SEO package for 423,50 EUR →
               </a>
               <button className="flex items-center space-x-3 text-slate-950 text-[13px] font-black px-4 py-3">
                 <span className="w-10 h-10 flex items-center justify-center rounded-full border border-slate-300 bg-white shadow-sm pl-0.5 text-xs">▶</span>
@@ -102,7 +102,7 @@ export default function Hero() {
               href="https://buy.stripe.com/5kQ8wQcO9eyPeq2a3i6kg01"
               className="w-full bg-slate-950 text-white text-xs font-bold py-4 rounded-full shadow-lg block text-center cursor-pointer"
             >
-              SEO package for 350,00 EUR →
+              SEO package for 423,50 EUR →
             </a>
             <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-[10px] font-black text-slate-600 pt-4 border-t border-slate-200/40">
               <span>✓ No setup fees</span>
