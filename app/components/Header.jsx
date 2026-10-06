@@ -22,7 +22,7 @@ export default function Header() {
           <span className="text-[10px]">▼</span>
         </div>
         <button className="bg-black hover:bg-zinc-800 text-white text-sm font-medium py-3 px-6 rounded-full flex items-center space-x-2 transition-all">
-          <span>Get in Touch</span>
+          <span>Start now</span>
           <span>→</span>
         </button>
       </div>

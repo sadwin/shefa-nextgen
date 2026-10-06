@@ -46,12 +46,12 @@ export default function Hero() {
             </p>
             <div className="flex items-center gap-4 pt-2">
               <a 
-                href="#how-it-works"
+                href="https://buy.stripe.com/9B614o7tP1M31Dgdfu6kg00"
                 onClick={handleScrollToSteps}
                 className="bg-slate-950 hover:bg-black text-white text-[13px] font-bold py-4 px-9 rounded-full shadow-xl transition-all duration-200 active:scale-95 block text-center cursor-pointer"
                 style={{ boxShadow: '0 20px 40px rgba(15,23,42,0.25)' }}
               >
-                See How It Works →
+                SEO package for 1089,00 EUR →
               </a>
               <button className="flex items-center space-x-3 text-slate-950 text-[13px] font-black px-4 py-3">
                 <span className="w-10 h-10 flex items-center justify-center rounded-full border border-slate-300 bg-white shadow-sm pl-0.5 text-xs">▶</span>
