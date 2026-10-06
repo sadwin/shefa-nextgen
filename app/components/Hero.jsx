@@ -99,11 +99,11 @@ export default function Hero() {
               SHEFA NextGen Systems helps local businesses get more Google reviews, collect customer contacts and bring clients back.
             </p>
             <a 
-              href="#how-it-works"
+              href="https://buy.stripe.com/5kQ8wQcO9eyPeq2a3i6kg01"
               onClick={handleScrollToSteps}
               className="w-full bg-slate-950 text-white text-xs font-bold py-4 rounded-full shadow-lg block text-center cursor-pointer"
             >
-              See How It Works →
+              SEO package for 350,00 EUR →
             </a>
             <div className="flex flex-wrap items-center gap-x-4 gap-y-1 text-[10px] font-black text-slate-600 pt-4 border-t border-slate-200/40">
               <span>✓ No setup fees</span>
