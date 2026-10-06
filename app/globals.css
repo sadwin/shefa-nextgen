@@ -1,8 +1,18 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f7f7f5;
+  --foreground: #11110f;
+
+  --gold: #c8a45d;
+  --gold-light: #dfc98f;
+  --gold-dark: #9b7837;
+
+  --surface: #ffffff;
+  --surface-dark: #11110f;
+
+  --muted: #6d6d67;
+  --border: #e6e4de;
 }
 
 @theme inline {
@@ -12,24 +22,125 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
+  margin: 0;
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
 
-@layer utilities {
-  .hero-bg-gradient {
-    background: radial-gradient(100% 100% at 50% 0%, #FAFCFF 0%, #FFFFFF 100%);
-  }
-  .dashboard-gradient {
-    background: linear-gradient(135deg, #0B132A 0%, #060A17 100%);
-  }
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: var(--gold);
+  color: #11110f;
+}
+
+/* SHEFA brand utilities */
+
+.shefa-gold {
+  color: var(--gold);
+}
+
+.shefa-gold-bg {
+  background: var(--gold);
+}
+
+.shefa-surface {
+  background: var(--surface);
+}
+
+.shefa-dark {
+  background: var(--surface-dark);
+  color: white;
+}
+
+/* Subtle Metatron-style geometry */
+
+.metatron-watermark {
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  border: 1px solid rgba(200, 164, 93, 0.08);
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0.7;
+}
+
+.metatron-watermark::before,
+.metatron-watermark::after {
+  content: "";
+  position: absolute;
+  inset: 10%;
+  border: 1px solid rgba(200, 164, 93, 0.06);
+  border-radius: 50%;
+}
+
+.metatron-watermark::after {
+  inset: 25%;
+}
+
+/* Premium dark dashboard section */
+
+.dashboard-gradient {
+  background:
+    radial-gradient(
+      circle at 75% 45%,
+      rgba(200, 164, 93, 0.10),
+      transparent 32%
+    ),
+    #11110f;
+}
+
+/* Buttons */
+
+.shefa-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 9999px;
+  background: #11110f;
+  color: white;
+  padding: 14px 22px;
+  font-weight: 600;
+  transition:
+    transform 180ms ease,
+    background 180ms ease;
+}
+
+.shefa-button:hover {
+  background: #292923;
+  transform: translateY(-1px);
+}
+
+.shefa-button-gold {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 9999px;
+  background: var(--gold);
+  color: #11110f;
+  padding: 14px 22px;
+  font-weight: 600;
+  transition:
+    transform 180ms ease,
+    background 180ms ease;
+}
+
+.shefa-button-gold:hover {
+  background: var(--gold-light);
+  transform: translateY(-1px);
 }
