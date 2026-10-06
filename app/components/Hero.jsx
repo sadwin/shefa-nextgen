@@ -2,242 +2,155 @@
 
 import { useLanguage } from '../LanguageContext';
 
-const STRIPE_URL = 'https://buy.stripe.com/5kQ8wQcO9eyPeq2a3i6kg01';
-
-function ArrowIcon() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-      <path
-        d="M4 14 14 4M6 4h8v8"
-        stroke="currentColor"
-        strokeWidth="1.6"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-function CheckIcon() {
-  return (
-    <svg width="15" height="15" viewBox="0 0 15 15" fill="none">
-      <path
-        d="m3 7.7 2.7 2.7L12 4.3"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-    </svg>
-  );
-}
-
-function ChartIcon() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-      <path
-        d="M3 14V8M7 14V4M11 14v-3M15 14V6"
-        stroke="currentColor"
-        strokeWidth="1.4"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-}
-
-function MessageIcon() {
-  return (
-    <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-      <path
-        d="M3 4.5A1.5 1.5 0 0 1 4.5 3h9A1.5 1.5 0 0 1 15 4.5v6A1.5 1.5 0 0 1 13.5 12H8l-3.5 3V12h0A1.5 1.5 0 0 1 3 10.5v-6Z"
-        stroke="currentColor"
-        strokeWidth="1.3"
-      />
-    </svg>
-  );
-}
-
-function StarIcon() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-      <path
-        d="m8 2 1.7 3.5 3.8.5-2.8 2.7.7 3.8L8 10.7 4.6 12.5l.7-3.8-2.8-2.7 3.8-.5L8 2Z"
-        fill="currentColor"
-      />
-    </svg>
-  );
-}
-
 export default function Hero() {
-  const { lang } = useLanguage();
-  const isNL = lang === 'nl';
+  const { language } = useLanguage();
+
+  const isNL = language === 'nl';
 
   return (
-    <section className="relative overflow-hidden bg-[#f7f6f2] pt-28 sm:pt-32 lg:pt-36">
-      <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-10">
-        <div className="grid items-center gap-14 pb-20 lg:grid-cols-[0.9fr_1.1fr] lg:gap-16 lg:pb-24">
-          {/* Left */}
-          <div className="max-w-2xl">
-            <div className="mb-6 flex items-center gap-3">
-              <span className="h-px w-8 bg-[#b39458]" />
-              <span className="text-[11px] font-semibold tracking-[0.22em] text-[#8b6c34]">
-                {isNL ? 'KLANTGROEI SYSTEEM' : 'CUSTOMER GROWTH SYSTEM'}
+    <section className="relative overflow-hidden bg-[#f7f6f2] pt-28 pb-20 sm:pt-36 sm:pb-24">
+      {/* subtle geometric background */}
+      <div className="pointer-events-none absolute inset-0 opacity-[0.035]">
+        <div className="absolute left-1/2 top-20 h-[700px] w-[700px] -translate-x-1/2 rounded-full border border-[#0a1020]" />
+        <div className="absolute left-1/2 top-20 h-[500px] w-[500px] -translate-x-1/2 rotate-45 border border-[#0a1020]" />
+        <div className="absolute left-1/2 top-20 h-[500px] w-[500px] -translate-x-1/2 -rotate-45 border border-[#0a1020]" />
+      </div>
+
+      <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
+        <div className="mx-auto max-w-4xl text-center">
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[#b39458]/30 bg-white px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#8b6c34]">
+            <span className="h-1.5 w-1.5 rounded-full bg-[#b39458]" />
+            {isNL ? 'CUSTOMER GROWTH SYSTEM' : 'CUSTOMER GROWTH SYSTEM'}
+          </div>
+
+          <h1 className="text-5xl font-semibold tracking-[-0.045em] text-[#0a1020] sm:text-6xl lg:text-7xl">
+            {isNL
+              ? 'Maak van elk klantbezoek groei.'
+              : 'Turn every customer visit into growth.'}
+          </h1>
+
+          <p className="mx-auto mt-7 max-w-2xl text-base leading-7 text-[#647084] sm:text-lg">
+            {isNL
+              ? 'Shefa Nextgen verbindt reviews, klantdata, WhatsApp, SMS en marketing in één eenvoudig systeem.'
+              : 'Shefa Nextgen connects reviews, customer data, WhatsApp, SMS and marketing in one simple system.'}
+          </p>
+
+          <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <a
+              href="https://buy.stripe.com/5kQ8wQcO9eyPeq2a3i6kg01"
+              className="inline-flex min-h-12 items-center justify-center rounded-xl bg-[#0a1020] px-7 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#161e31]"
+            >
+              {isNL ? 'Aan de slag' : 'Get started'}
+            </a>
+
+            <a
+              href="#how-it-works"
+              className="inline-flex min-h-12 items-center justify-center rounded-xl border border-[#d9d6ce] bg-white px-7 text-sm font-semibold text-[#0a1020] transition hover:border-[#b39458] hover:bg-[#fffdfa]"
+            >
+              {isNL ? 'Bekijk hoe het werkt' : 'See how it works'}
+            </a>
+          </div>
+
+          <div className="mt-7 flex flex-wrap justify-center gap-x-6 gap-y-2 text-xs font-medium text-[#647084]">
+            <span>✓ {isNL ? 'Eenvoudige onboarding' : 'Simple onboarding'}</span>
+            <span>✓ {isNL ? 'Flexibele workflows' : 'Flexible workflows'}</span>
+            <span>✓ {isNL ? 'Eén verbonden systeem' : 'One connected system'}</span>
+          </div>
+        </div>
+
+        {/* Demo dashboard */}
+        <div className="relative mx-auto mt-16 max-w-6xl">
+          <div className="absolute -inset-4 rounded-[2rem] bg-[#b39458]/10 blur-2xl" />
+
+          <div className="relative overflow-hidden rounded-2xl border border-[#dcd9d0] bg-white shadow-[0_30px_80px_rgba(10,16,32,0.12)]">
+            {/* top bar */}
+            <div className="flex items-center justify-between border-b border-[#e8e6e0] px-5 py-4 sm:px-7">
+              <div className="flex items-center gap-3">
+                <div className="flex gap-1.5">
+                  <span className="h-2.5 w-2.5 rounded-full bg-[#d8d5cc]" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-[#d8d5cc]" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-[#d8d5cc]" />
+                </div>
+
+                <span className="hidden text-xs font-medium text-[#647084] sm:block">
+                  Shefa Dashboard
+                </span>
+              </div>
+
+              <span className="rounded-full border border-[#b39458]/30 bg-[#b39458]/10 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-[#8b6c34]">
+                Demo interface
               </span>
             </div>
 
-            <h1 className="max-w-2xl text-5xl font-semibold leading-[1.02] tracking-[-0.045em] text-[#0a1020] sm:text-6xl lg:text-[68px]">
-              {isNL
-                ? 'Maak van elk klantbezoek nieuwe groei.'
-                : 'Turn every customer visit into growth.'}
-            </h1>
-
-            <p className="mt-7 max-w-xl text-base leading-7 text-slate-600 sm:text-lg">
-              {isNL
-                ? 'Shefa verbindt reviews, klantdata, WhatsApp, SMS en marketing in één eenvoudig systeem — zodat elk bezoek kan uitgroeien tot een relatie.'
-                : 'Shefa connects reviews, customer data, WhatsApp, SMS and marketing in one simple system — so every visit can become a relationship.'}
-            </p>
-
-            <div className="mt-9 flex flex-col gap-3 sm:flex-row">
-              <a
-                href={STRIPE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group inline-flex min-h-12 items-center justify-center gap-3 rounded-full bg-[#0a1020] px-7 text-sm font-semibold text-white transition hover:bg-[#161e31]"
-              >
-                {isNL ? 'Aan de slag' : 'Get started'}
-
-                <span className="transition-transform duration-200 group-hover:translate-x-0.5 group-hover:-translate-y-0.5">
-                  <ArrowIcon />
-                </span>
-              </a>
-
-              <a
-                href="#how-it-works"
-                className="inline-flex min-h-12 items-center justify-center rounded-full border border-[#d5d1c8] bg-white/60 px-7 text-sm font-semibold text-[#0a1020] transition hover:bg-white"
-              >
-                {isNL ? 'Bekijk hoe het werkt' : 'See how it works'}
-              </a>
-            </div>
-
-            <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3">
-              {[
-                isNL ? 'Eenvoudige onboarding' : 'Simple onboarding',
-                isNL ? 'Annuleer wanneer je wilt' : 'Cancel anytime',
-                isNL ? 'Snel te starten' : 'Ready to start',
-              ].map((item) => (
-                <div
-                  key={item}
-                  className="flex items-center gap-2 text-xs text-slate-500"
-                >
-                  <span className="text-[#94743d]">
-                    <CheckIcon />
-                  </span>
-                  {item}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Dashboard */}
-          <div className="relative lg:pl-2">
-            <div className="absolute -right-5 -top-5 z-20 rounded-full border border-[#d8cba9] bg-[#fbf8ef] px-3 py-1.5 text-[9px] font-semibold uppercase tracking-[0.16em] text-[#8b6c34] shadow-sm">
-              {isNL ? 'Demo interface' : 'Demo interface'}
-            </div>
-
-            <div className="relative overflow-hidden rounded-[26px] border border-[#20283a] bg-[#0a1020] shadow-[0_30px_80px_rgba(10,16,32,0.20)]">
-              {/* Top bar */}
-              <div className="flex items-center justify-between border-b border-white/10 px-5 py-4">
-                <div className="flex items-center gap-2.5">
-                  <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-[#b39458] text-[#0a1020]">
-                    <ChartIcon />
-                  </div>
-
-                  <div>
-                    <div className="text-[11px] font-semibold text-white">
-                      Customer growth
-                    </div>
-                    <div className="text-[9px] text-white/35">
-                      Example workspace
-                    </div>
-                  </div>
+            <div className="p-5 sm:p-7">
+              <div className="flex items-end justify-between">
+                <div>
+                  <p className="text-xs font-medium uppercase tracking-[0.14em] text-[#8b6c34]">
+                    Customer growth
+                  </p>
+                  <h2 className="mt-1 text-xl font-semibold tracking-tight text-[#0a1020] sm:text-2xl">
+                    Overview
+                  </h2>
                 </div>
 
-                <div className="rounded-full border border-white/10 px-2.5 py-1 text-[9px] text-white/40">
-                  Demo
-                </div>
+                <span className="text-xs text-[#647084]">Example data</span>
               </div>
 
-              <div className="p-5 sm:p-6">
-                {/* Metrics */}
-                <div className="grid grid-cols-3 gap-2.5">
-                  <div className="rounded-xl border border-white/10 bg-white/[0.035] p-3">
-                    <div className="text-[8px] uppercase tracking-[0.12em] text-white/35">
-                      Reviews
-                    </div>
-                    <div className="mt-2 text-xl font-semibold text-white">
-                      +24
-                    </div>
-                    <div className="mt-1 text-[8px] text-[#cbb477]">
-                      Example
-                    </div>
-                  </div>
-
-                  <div className="rounded-xl border border-white/10 bg-white/[0.035] p-3">
-                    <div className="text-[8px] uppercase tracking-[0.12em] text-white/35">
-                      Customers
-                    </div>
-                    <div className="mt-2 text-xl font-semibold text-white">
-                      128
-                    </div>
-                    <div className="mt-1 text-[8px] text-[#cbb477]">
-                      Example
+              {/* metrics */}
+              <div className="mt-6 grid gap-3 sm:grid-cols-3">
+                {[
+                  ['Reviews', '24', '+8.2%'],
+                  ['Customers', '128', '+6.4%'],
+                  ['Campaign response', '34%', '+4.1%'],
+                ].map(([label, value, change]) => (
+                  <div
+                    key={label}
+                    className="rounded-xl border border-[#e8e6e0] bg-[#faf9f6] p-4"
+                  >
+                    <p className="text-xs text-[#647084]">{label}</p>
+                    <div className="mt-2 flex items-end justify-between gap-3">
+                      <span className="text-2xl font-semibold tracking-tight text-[#0a1020]">
+                        {value}
+                      </span>
+                      <span className="text-xs font-semibold text-[#8b6c34]">
+                        {change}
+                      </span>
                     </div>
                   </div>
+                ))}
+              </div>
 
-                  <div className="rounded-xl border border-white/10 bg-white/[0.035] p-3">
-                    <div className="text-[8px] uppercase tracking-[0.12em] text-white/35">
-                      Response
-                    </div>
-                    <div className="mt-2 text-xl font-semibold text-white">
-                      34%
-                    </div>
-                    <div className="mt-1 text-[8px] text-[#cbb477]">
-                      Example
-                    </div>
-                  </div>
-                </div>
-
-                {/* Chart */}
-                <div className="mt-3 rounded-xl border border-white/10 bg-white/[0.035] p-4">
+              {/* chart + activity */}
+              <div className="mt-3 grid gap-3 lg:grid-cols-[1.5fr_1fr]">
+                <div className="rounded-xl border border-[#e8e6e0] bg-white p-5">
                   <div className="flex items-center justify-between">
                     <div>
-                      <div className="text-[10px] font-medium text-white/55">
+                      <p className="text-sm font-semibold text-[#0a1020]">
                         Customer activity
-                      </div>
-                      <div className="mt-1 text-xs font-semibold text-white">
+                      </p>
+                      <p className="mt-1 text-xs text-[#647084]">
                         Visits & interactions
-                      </div>
+                      </p>
                     </div>
 
-                    <div className="flex items-center gap-1.5 text-[9px] text-[#cbb477]">
-                      <span className="h-1.5 w-1.5 rounded-full bg-[#b39458]" />
-                      Growing
-                    </div>
+                    <span className="rounded-full bg-[#f7f6f2] px-3 py-1 text-[10px] font-semibold text-[#647084]">
+                      Last 30 days
+                    </span>
                   </div>
 
-                  <div className="mt-5 flex h-24 items-end gap-1.5">
-                    {[28, 36, 31, 48, 43, 57, 50, 64, 59, 73, 68, 81].map(
+                  <div className="mt-8 flex h-36 items-end gap-2">
+                    {[28, 42, 35, 58, 48, 72, 64, 84, 70, 92, 78, 100].map(
                       (height, index) => (
                         <div
                           key={index}
-                          className="flex-1 rounded-t-sm bg-[#b39458]/50"
+                          className="flex-1 rounded-t-md bg-[#0a1020]/[0.08]"
                           style={{ height: `${height}%` }}
                         />
                       )
                     )}
                   </div>
 
-                  <div className="mt-2 flex justify-between text-[8px] text-white/25">
+                  <div className="mt-3 flex justify-between text-[10px] text-[#9aa1ad]">
                     <span>01</span>
                     <span>07</span>
                     <span>14</span>
@@ -246,102 +159,54 @@ export default function Hero() {
                   </div>
                 </div>
 
-                {/* Bottom cards */}
-                <div className="mt-3 grid gap-3 sm:grid-cols-2">
-                  <div className="rounded-xl border border-white/10 bg-white/[0.035] p-4">
-                    <div className="flex items-center gap-2 text-white/45">
-                      <StarIcon />
-                      <span className="text-[9px] uppercase tracking-[0.1em]">
-                        Latest review
+                <div className="rounded-xl border border-[#e8e6e0] bg-[#faf9f6] p-5">
+                  <p className="text-sm font-semibold text-[#0a1020]">
+                    Example customer feedback
+                  </p>
+
+                  <div className="mt-5 rounded-xl bg-white p-4">
+                    <div className="flex items-center justify-between">
+                      <span className="text-xs font-semibold text-[#0a1020]">
+                        Customer
+                      </span>
+                      <span className="text-[10px] text-[#647084]">
+                        Example
                       </span>
                     </div>
 
-                    <p className="mt-3 text-[11px] leading-5 text-white/75">
-                      “Excellent service. We will definitely come back.”
-                    </p>
+                    <div className="mt-3 text-sm leading-6 text-[#647084]">
+                      “Excellent service. We will definitely come back again.”
+                    </div>
 
-                    <div className="mt-3 text-[8px] text-white/30">
-                      Example customer feedback
+                    <div className="mt-4 flex gap-1 text-[#b39458]">
+                      ★★★★★
                     </div>
                   </div>
 
-                  <div className="rounded-xl border border-white/10 bg-white/[0.035] p-4">
-                    <div className="flex items-center gap-2 text-white/45">
-                      <MessageIcon />
-                      <span className="text-[9px] uppercase tracking-[0.1em]">
-                        Automation
-                      </span>
-                    </div>
-
-                    <div className="mt-3 space-y-2">
-                      <div className="flex items-center justify-between text-[9px]">
-                        <span className="text-white/55">Follow-up</span>
-                        <span className="text-[#cbb477]">Active</span>
-                      </div>
-
-                      <div className="flex items-center justify-between text-[9px]">
-                        <span className="text-white/55">Review request</span>
-                        <span className="text-[#cbb477]">Active</span>
-                      </div>
-
-                      <div className="flex items-center justify-between text-[9px]">
-                        <span className="text-white/55">Campaigns</span>
-                        <span className="text-white/30">Ready</span>
-                      </div>
-                    </div>
+                  <div className="mt-4 flex items-center gap-2 text-xs font-medium text-[#8b6c34]">
+                    <span className="h-2 w-2 rounded-full bg-[#b39458]" />
+                    Automation active
                   </div>
                 </div>
               </div>
 
-              {/* Floating message */}
-              <div className="absolute -bottom-4 -left-5 hidden w-52 rounded-2xl border border-[#ddd5c2] bg-white p-3 shadow-[0_18px_50px_rgba(10,16,32,0.16)] sm:block">
-                <div className="flex items-center gap-2">
-                  <div className="flex h-7 w-7 items-center justify-center rounded-full bg-[#f3eee2] text-[#94743d]">
-                    <MessageIcon />
+              {/* bottom navigation */}
+              <div className="mt-3 grid grid-cols-4 gap-2 rounded-xl border border-[#e8e6e0] bg-[#faf9f6] p-2">
+                {['Reviews', 'CRM', 'Messaging', 'Growth'].map((item, index) => (
+                  <div
+                    key={item}
+                    className={`rounded-lg px-3 py-2 text-center text-[11px] font-medium ${
+                      index === 0
+                        ? 'bg-white text-[#0a1020] shadow-sm'
+                        : 'text-[#647084]'
+                    }`}
+                  >
+                    {item}
                   </div>
-
-                  <div>
-                    <div className="text-[9px] font-semibold text-[#0a1020]">
-                      WhatsApp / SMS
-                    </div>
-                    <div className="text-[8px] text-slate-400">
-                      Automated follow-up
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-3 rounded-xl bg-[#f7f6f2] p-2.5 text-[9px] leading-4 text-slate-500">
-                  Hi, thanks for visiting us today. How was your experience?
-                </div>
+                ))}
               </div>
             </div>
           </div>
-        </div>
-
-        {/* Bottom strip */}
-        <div className="grid border-t border-slate-200 sm:grid-cols-4">
-          {[
-            ['Reviews', 'Google feedback'],
-            ['CRM', 'Customer data'],
-            ['Messaging', 'WhatsApp & SMS'],
-            ['Growth', 'Marketing automation'],
-          ].map(([title, subtitle]) => (
-            <div
-              key={title}
-              className="flex items-center justify-between border-b border-slate-200 py-5 sm:border-b-0 sm:border-r sm:px-6 first:sm:pl-0 last:sm:border-r-0"
-            >
-              <div>
-                <div className="text-xs font-semibold text-[#0a1020]">
-                  {title}
-                </div>
-                <div className="mt-1 text-[10px] text-slate-400">
-                  {subtitle}
-                </div>
-              </div>
-
-              <span className="h-1.5 w-1.5 rounded-full bg-[#b39458]" />
-            </div>
-          ))}
         </div>
       </div>
     </section>
