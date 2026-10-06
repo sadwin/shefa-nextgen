@@ -1,607 +1,351 @@
-"use client";
+import Header from "./components/Header";
+import Hero from "./components/Hero";
+import Features from "./components/Features";
+import HowItWorks from "./components/HowItWorks";
+import RealResults from "./components/RealResults";
+import Industries from "./components/Industries";
+import Pricing from "./components/Pricing";
+import FooterLogos from "./components/FooterLogos";
 
-const navItems = [
-  ["Product", "#product"],
-  ["How it works", "#how"],
-  ["Results", "#results"],
-  ["Pricing", "#pricing"],
-];
+export const metadata = {
+  title: "SHEFA NextGen Systems — Turn customers into growth",
+  description:
+    "SHEFA connects customer data, reviews, WhatsApp, SMS and marketing into one customer growth system.",
+};
 
-function Metatron({ size = 34 }) {
+function TrustBar() {
   return (
-    <svg
-      width={size}
-      height={size}
-      viewBox="0 0 100 100"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-hidden="true"
-    >
-      <g stroke="currentColor" strokeWidth="1.35" opacity=".95">
-        <circle cx="50" cy="50" r="43" />
-        <circle cx="50" cy="50" r="29" />
-        <circle cx="50" cy="50" r="15" />
-        <circle cx="50" cy="7" r="7" />
-        <circle cx="87.24" cy="28.5" r="7" />
-        <circle cx="87.24" cy="71.5" r="7" />
-        <circle cx="50" cy="93" r="7" />
-        <circle cx="12.76" cy="71.5" r="7" />
-        <circle cx="12.76" cy="28.5" r="7" />
-        <path d="M50 7L87.24 71.5L12.76 71.5L50 7Z" />
-        <path d="M50 93L12.76 28.5L87.24 28.5L50 93Z" />
-        <path d="M7 50H93M50 7V93" opacity=".55" />
-        <path d="M19.6 19.6L80.4 80.4M80.4 19.6L19.6 80.4" opacity=".55" />
-      </g>
-      <circle cx="50" cy="50" r="3.2" fill="currentColor" />
-    </svg>
+    <section className="border-y border-slate-200 bg-white">
+      <div className="shefa-container flex min-h-[86px] flex-col justify-center gap-5 py-5 md:flex-row md:items-center md:justify-between">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-slate-400">
+          Built for businesses that depend on returning customers
+        </p>
+
+        <div className="flex flex-wrap items-center gap-x-7 gap-y-3 text-xs font-semibold tracking-[0.12em] text-slate-400">
+          <span>HOSPITALITY</span>
+          <span>HEALTH</span>
+          <span>BEAUTY</span>
+          <span>RETAIL</span>
+          <span>SERVICES</span>
+        </div>
+      </div>
+    </section>
   );
 }
 
-function Logo() {
+function ProductBridge() {
   return (
-    <div className="logo">
-      <div className="logo-mark">
-        <Metatron size={31} />
+    <section className="relative overflow-hidden bg-[#f7f6f2] py-24 md:py-32">
+      <div className="metatron-watermark right-[-180px] top-[-100px] h-[560px] w-[560px] text-[#b39458]">
+        <svg viewBox="0 0 100 100" fill="none">
+          <circle cx="50" cy="50" r="42" stroke="currentColor" />
+          <circle cx="50" cy="50" r="28" stroke="currentColor" />
+          <circle cx="50" cy="50" r="14" stroke="currentColor" />
+
+          <circle cx="50" cy="8" r="8" stroke="currentColor" />
+          <circle cx="86.4" cy="29" r="8" stroke="currentColor" />
+          <circle cx="86.4" cy="71" r="8" stroke="currentColor" />
+          <circle cx="50" cy="92" r="8" stroke="currentColor" />
+          <circle cx="13.6" cy="71" r="8" stroke="currentColor" />
+          <circle cx="13.6" cy="29" r="8" stroke="currentColor" />
+
+          <path
+            d="M50 8L86.4 71L13.6 71L50 8ZM50 92L13.6 29L86.4 29L50 92Z"
+            stroke="currentColor"
+          />
+        </svg>
       </div>
-      <div>
-        <div className="logo-name">SHEFA</div>
-        <div className="logo-sub">NEXTGEN SYSTEMS</div>
+
+      <div className="shefa-container relative z-10">
+        <div className="grid items-end gap-10 md:grid-cols-[1.15fr_.85fr]">
+          <div>
+            <div className="shefa-eyebrow">THE CUSTOMER GROWTH SYSTEM</div>
+
+            <h2 className="mt-5 max-w-3xl text-4xl font-medium leading-[1.02] tracking-[-0.045em] text-[#0a1020] md:text-6xl">
+              Everything that happens
+              <br />
+              <span className="text-[#8b6c34]">after the first visit.</span>
+            </h2>
+          </div>
+
+          <p className="max-w-xl text-base leading-8 text-slate-500">
+            SHEFA turns customer interactions into a connected growth loop —
+            from the first visit, to reviews, to follow-up, to the next
+            purchase.
+          </p>
+        </div>
+
+        <div className="mt-16 grid overflow-hidden rounded-[28px] border border-slate-200 bg-white shadow-[0_30px_100px_rgba(10,16,32,.08)] md:grid-cols-4">
+          {[
+            {
+              number: "01",
+              title: "Capture",
+              text: "Bring every customer interaction into one profile.",
+            },
+            {
+              number: "02",
+              title: "Understand",
+              text: "See who is returning, drifting or ready to buy.",
+            },
+            {
+              number: "03",
+              title: "Activate",
+              text: "Trigger reviews, WhatsApp, SMS and campaigns.",
+            },
+            {
+              number: "04",
+              title: "Return",
+              text: "Turn one visit into a repeat customer relationship.",
+            },
+          ].map((item, index) => (
+            <div
+              key={item.number}
+              className={[
+                "group relative min-h-[235px] p-7 md:p-8",
+                index !== 3 ? "border-b border-slate-200 md:border-b-0 md:border-r" : "",
+              ].join(" ")}
+            >
+              <span className="text-[10px] font-bold tracking-[0.18em] text-[#b39458]">
+                {item.number}
+              </span>
+
+              <div className="mt-20">
+                <h3 className="text-xl font-medium tracking-[-0.02em] text-[#0a1020]">
+                  {item.title}
+                </h3>
+
+                <p className="mt-3 max-w-[230px] text-sm leading-6 text-slate-500">
+                  {item.text}
+                </p>
+              </div>
+
+              {index !== 3 && (
+                <div className="absolute bottom-7 right-7 text-[#b39458] transition-transform group-hover:translate-x-1">
+                  →
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
+    </section>
   );
 }
 
-function Arrow() {
-  return <span aria-hidden="true">↗</span>;
+function PlatformStatement() {
+  return (
+    <section className="dashboard-gradient relative overflow-hidden py-24 text-white md:py-32">
+      <div className="shefa-container relative z-10">
+        <div className="grid items-center gap-16 md:grid-cols-[.8fr_1.2fr]">
+          <div>
+            <div className="inline-flex items-center gap-3 text-[10px] font-bold tracking-[0.22em] text-[#d4bc83]">
+              <span className="h-px w-7 bg-[#b39458]" />
+              ONE CONNECTED SYSTEM
+            </div>
+
+            <h2 className="mt-6 max-w-xl text-4xl font-medium leading-[1.02] tracking-[-0.045em] md:text-6xl">
+              Less software.
+              <br />
+              <span className="text-[#d4bc83]">More customer growth.</span>
+            </h2>
+
+            <p className="mt-7 max-w-lg text-sm leading-7 text-white/55 md:text-base">
+              Reviews, customer data, WhatsApp, SMS and marketing shouldn't
+              live in five different places. SHEFA connects them into one
+              system your team can actually use.
+            </p>
+
+            <a
+              href="#pricing"
+              className="shefa-button shefa-button-gold mt-9"
+            >
+              See the platform <span>↗</span>
+            </a>
+          </div>
+
+          <div className="relative">
+            <div className="rounded-[24px] border border-white/10 bg-white/[.045] p-3 shadow-2xl backdrop-blur-xl">
+              <div className="overflow-hidden rounded-[17px] border border-white/10 bg-[#101728]">
+                <div className="flex items-center justify-between border-b border-white/10 px-5 py-4">
+                  <div>
+                    <div className="text-[9px] font-bold tracking-[0.18em] text-[#d4bc83]">
+                      SHEFA CUSTOMER ENGINE
+                    </div>
+                    <div className="mt-1 text-sm font-medium text-white">
+                      Customer overview
+                    </div>
+                  </div>
+
+                  <div className="flex items-center gap-2 rounded-full border border-white/10 px-3 py-1.5 text-[9px] text-white/50">
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400" />
+                    Live
+                  </div>
+                </div>
+
+                <div className="grid gap-3 p-4 md:grid-cols-3">
+                  {[
+                    ["Returning customers", "68.4%", "+12.8%"],
+                    ["Automated revenue", "€48.2k", "+21.4%"],
+                    ["Active campaigns", "24", "8 running"],
+                  ].map(([label, value, change]) => (
+                    <div
+                      key={label}
+                      className="rounded-xl border border-white/10 bg-white/[.035] p-4"
+                    >
+                      <div className="text-[9px] text-white/35">{label}</div>
+                      <div className="mt-3 text-2xl font-medium text-white">
+                        {value}
+                      </div>
+                      <div className="mt-1 text-[9px] text-[#d4bc83]">
+                        {change}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="grid gap-3 px-4 pb-4 md:grid-cols-[1.35fr_.65fr]">
+                  <div className="rounded-xl border border-white/10 bg-white/[.035] p-5">
+                    <div className="flex justify-between text-[10px] text-white/55">
+                      <span>Customer revenue</span>
+                      <span className="text-white/25">Last 30 days</span>
+                    </div>
+
+                    <div className="relative mt-6 h-48 overflow-hidden">
+                      <div className="absolute inset-0 bg-[repeating-linear-gradient(to_bottom,transparent_0,transparent_46px,rgba(255,255,255,.06)_47px)]" />
+
+                      <svg
+                        viewBox="0 0 600 220"
+                        preserveAspectRatio="none"
+                        className="absolute inset-0 h-full w-full text-[#b39458]"
+                      >
+                        <path
+                          d="M0 185 C55 178 72 169 112 175 C155 181 170 142 214 151 C258 160 270 111 315 124 C355 136 375 87 411 101 C452 118 475 68 513 82 C548 94 572 50 600 36"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="4"
+                        />
+                        <path
+                          d="M0 185 C55 178 72 169 112 175 C155 181 170 142 214 151 C258 160 270 111 315 124 C355 136 375 87 411 101 C452 118 475 68 513 82 C548 94 572 50 600 36 V220 H0Z"
+                          fill="currentColor"
+                          opacity=".08"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+
+                  <div className="rounded-xl border border-white/10 bg-white/[.035] p-5">
+                    <div className="text-[10px] text-white/55">
+                      Latest activity
+                    </div>
+
+                    <div className="mt-5 space-y-4">
+                      {[
+                        ["A", "Review campaign", "+€840"],
+                        ["B", "Customer returned", "+€310"],
+                        ["N", "WhatsApp follow-up", "+€185"],
+                      ].map(([initial, action, revenue]) => (
+                        <div
+                          key={initial}
+                          className="flex items-center gap-3 border-b border-white/10 pb-4 last:border-0"
+                        >
+                          <div className="grid h-8 w-8 shrink-0 place-items-center rounded-full bg-[#b39458]/10 text-[10px] text-[#d4bc83]">
+                            {initial}
+                          </div>
+
+                          <div className="min-w-0 flex-1">
+                            <div className="text-[10px] text-white/70">
+                              {action}
+                            </div>
+                            <div className="mt-1 text-[8px] text-white/25">
+                              Automated
+                            </div>
+                          </div>
+
+                          <div className="text-[9px] text-[#d4bc83]">
+                            {revenue}
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="pointer-events-none absolute -bottom-12 -right-12 h-40 w-40 rounded-full border border-[#b39458]/20" />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 }
 
-function Dashboard() {
+function FinalCTA() {
   return (
-    <div className="dashboard-shell">
-      <div className="dashboard-top">
-        <div>
-          <div className="dash-kicker">CUSTOMER ENGINE</div>
-          <div className="dash-title">Amsterdam · Overview</div>
-        </div>
-
-        <div className="dash-live">
-          <span />
-          Live
-        </div>
-      </div>
-
-      <div className="metric-grid">
-        <div className="metric-card">
-          <span>Returning customers</span>
-          <strong>68.4%</strong>
-          <small>+12.8% this month</small>
-        </div>
-        <div className="metric-card">
-          <span>Automated revenue</span>
-          <strong>€48.2k</strong>
-          <small>+21.4% this month</small>
-        </div>
-        <div className="metric-card">
-          <span>Active campaigns</span>
-          <strong>24</strong>
-          <small>8 running today</small>
-        </div>
-      </div>
-
-      <div className="dash-body">
-        <div className="chart-card">
-          <div className="chart-head">
-            <span>Customer revenue</span>
-            <span className="chart-period">Last 30 days</span>
-          </div>
-
-          <div className="chart">
-            <div className="chart-grid" />
-            <svg viewBox="0 0 640 230" preserveAspectRatio="none">
-              <path
-                d="M0 190 C55 184 70 171 110 176 C153 181 169 142 211 149 C251 156 271 111 309 124 C354 139 368 85 407 101 C446 118 474 68 509 82 C550 98 571 46 640 34"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="4"
-              />
-              <path
-                d="M0 190 C55 184 70 171 110 176 C153 181 169 142 211 149 C251 156 271 111 309 124 C354 139 368 85 407 101 C446 118 474 68 509 82 C550 98 571 46 640 34 V230 H0Z"
-                fill="currentColor"
-                opacity=".07"
-              />
-            </svg>
-          </div>
-        </div>
-
-        <div className="activity-card">
-          <div className="chart-head">
-            <span>Latest activity</span>
-            <span className="chart-period">Today</span>
-          </div>
-
-          <div className="activity-row">
-            <div className="activity-avatar">A</div>
+    <section className="relative overflow-hidden bg-[#f7f6f2] py-24 md:py-32">
+      <div className="shefa-container relative z-10">
+        <div className="rounded-[30px] bg-[#0a1020] px-7 py-14 text-white md:px-16 md:py-20">
+          <div className="grid items-end gap-12 md:grid-cols-[1fr_auto]">
             <div>
-              <b>Amsterdam Coffee Co.</b>
-              <span>Campaign converted</span>
-            </div>
-            <strong>+€840</strong>
-          </div>
+              <div className="shefa-eyebrow !text-[#d4bc83]">
+                READY WHEN YOU ARE
+              </div>
 
-          <div className="activity-row">
-            <div className="activity-avatar">B</div>
-            <div>
-              <b>Bloom Studio</b>
-              <span>Customer returned</span>
-            </div>
-            <strong>+€310</strong>
-          </div>
+              <h2 className="mt-6 max-w-3xl text-4xl font-medium leading-[1.02] tracking-[-0.045em] md:text-6xl">
+                Make your next customer
+                <br />
+                <span className="text-[#d4bc83]">
+                  worth more than the first.
+                </span>
+              </h2>
 
-          <div className="activity-row">
-            <div className="activity-avatar">N</div>
-            <div>
-              <b>Northside Dental</b>
-              <span>Automated follow-up</span>
+              <p className="mt-6 max-w-xl text-sm leading-7 text-white/50 md:text-base">
+                Tell us about your business and we'll show you where SHEFA can
+                create the biggest opportunity for repeat revenue.
+              </p>
             </div>
-            <strong>+€185</strong>
+
+            <a
+              href="mailto:hello@shefa-nextgen.com"
+              className="shefa-button shefa-button-gold whitespace-nowrap"
+            >
+              Book a demo <span>↗</span>
+            </a>
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
 export default function Home() {
   return (
-    <main>
-      <header className="site-header">
-        <div className="container nav-wrap">
-          <a className="brand-link" href="#">
-            <Logo />
-          </a>
+    <div className="min-h-screen bg-white font-sans antialiased text-slate-900">
+      <Header />
 
-          <nav className="desktop-nav">
-            {navItems.map(([label, href]) => (
-              <a key={href} href={href}>
-                {label}
-              </a>
-            ))}
-          </nav>
+      <main>
+        <Hero />
 
-          <a className="nav-cta" href="#contact">
-            Book a demo <Arrow />
-          </a>
-        </div>
-      </header>
+        <TrustBar />
 
-      <section className="hero">
-        <div className="hero-photo">
-          <div className="office-window window-one" />
-          <div className="office-window window-two" />
-          <div className="office-person person-one" />
-          <div className="office-person person-two" />
-          <div className="office-person person-three" />
-        </div>
+        <ProductBridge />
 
-        <div className="hero-overlay" />
+        <Features />
 
-        <div className="container hero-content">
-          <div className="hero-copy">
-            <div className="eyebrow">
-              <span className="eyebrow-dot" />
-              CUSTOMER GROWTH SYSTEMS · AMSTERDAM
-            </div>
+        <PlatformStatement />
 
-            <h1>
-              Turn every customer
-              <br />
-              into a <em>returning</em> customer.
-            </h1>
+        <HowItWorks />
 
-            <p className="hero-description">
-              SHEFA connects customer data, automation and intelligent
-              follow-ups into one growth system built for modern local
-              businesses.
-            </p>
+        <RealResults />
 
-            <div className="hero-actions">
-              <a className="button button-dark" href="#contact">
-                Build your growth system <Arrow />
-              </a>
-              <a className="button button-light" href="#product">
-                See how it works
-              </a>
-            </div>
+        <Industries />
 
-            <div className="hero-note">
-              <Metatron size={20} />
-              <span>
-                One system. Every customer touchpoint.
-              </span>
-            </div>
-          </div>
-        </div>
+        <Pricing />
 
-        <div className="hero-bottom container">
-          <div className="hero-proof">
-            <strong>+21.4%</strong>
-            <span>average revenue uplift</span>
-          </div>
-          <div className="hero-proof">
-            <strong>68.4%</strong>
-            <span>returning customer rate</span>
-          </div>
-          <div className="hero-proof hero-proof-last">
-            <strong>24/7</strong>
-            <span>automated customer engagement</span>
-          </div>
-        </div>
-      </section>
+        <FinalCTA />
+      </main>
 
-      <section className="trust-strip">
-        <div className="container trust-inner">
-          <span>Built for ambitious local businesses</span>
-          <div className="trust-logos">
-            <span>HORECA</span>
-            <span>HEALTH</span>
-            <span>BEAUTY</span>
-            <span>RETAIL</span>
-            <span>SERVICES</span>
-          </div>
-        </div>
-      </section>
-
-      <section className="section product-section" id="product">
-        <div className="container">
-          <div className="section-intro split-intro">
-            <div>
-              <div className="eyebrow dark-eyebrow">THE SYSTEM</div>
-              <h2>
-                Your business,
-                <br />
-                <em>one intelligent layer.</em>
-              </h2>
-            </div>
-
-            <p>
-              Stop stitching together disconnected tools. SHEFA gives your
-              team one clear operating layer for acquisition, retention,
-              communication and revenue.
-            </p>
-          </div>
-
-          <Dashboard />
-        </div>
-      </section>
-
-      <section className="section categories-section">
-        <div className="container">
-          <div className="center-intro">
-            <div className="eyebrow dark-eyebrow">DESIGNED AROUND YOU</div>
-            <h2>
-              One engine.
-              <br />
-              <em>Different businesses.</em>
-            </h2>
-          </div>
-
-          <div className="category-grid">
-            <div className="category-card category-large">
-              <span className="category-number">01</span>
-              <div>
-                <h3>Hospitality</h3>
-                <p>
-                  Fill quieter days, increase repeat visits and automate
-                  personalised guest communication.
-                </p>
-              </div>
-              <Arrow />
-            </div>
-
-            <div className="category-card">
-              <span className="category-number">02</span>
-              <div>
-                <h3>Health</h3>
-                <p>
-                  Turn one appointment into a long-term customer relationship.
-                </p>
-              </div>
-              <Arrow />
-            </div>
-
-            <div className="category-card">
-              <span className="category-number">03</span>
-              <div>
-                <h3>Beauty</h3>
-                <p>
-                  Automate rebooking and bring clients back at the right time.
-                </p>
-              </div>
-              <Arrow />
-            </div>
-
-            <div className="category-card">
-              <span className="category-number">04</span>
-              <div>
-                <h3>Retail</h3>
-                <p>
-                  Build customer journeys that increase frequency and basket
-                  value.
-                </p>
-              </div>
-              <Arrow />
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section how-section" id="how">
-        <div className="container">
-          <div className="section-intro split-intro">
-            <div>
-              <div className="eyebrow dark-eyebrow">HOW IT WORKS</div>
-              <h2>
-                From first visit
-                <br />
-                <em>to repeat habit.</em>
-              </h2>
-            </div>
-
-            <p>
-              SHEFA continuously learns what customers do and turns those
-              signals into useful actions for your team.
-            </p>
-          </div>
-
-          <div className="steps">
-            <div className="step">
-              <div className="step-top">
-                <span>01</span>
-                <div className="step-line" />
-              </div>
-              <h3>Capture</h3>
-              <p>
-                Bring customer data and interactions into one clean customer
-                profile.
-              </p>
-            </div>
-
-            <div className="step">
-              <div className="step-top">
-                <span>02</span>
-                <div className="step-line" />
-              </div>
-              <h3>Understand</h3>
-              <p>
-                See who is returning, who is drifting away and where revenue
-                opportunities sit.
-              </p>
-            </div>
-
-            <div className="step">
-              <div className="step-top">
-                <span>03</span>
-                <div className="step-line" />
-              </div>
-              <h3>Automate</h3>
-              <p>
-                Trigger personalised messages and campaigns without manual
-                follow-up.
-              </p>
-            </div>
-
-            <div className="step">
-              <div className="step-top">
-                <span>04</span>
-                <div className="step-line" />
-              </div>
-              <h3>Grow</h3>
-              <p>
-                Turn more first-time customers into repeat revenue and loyal
-                relationships.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section feature-section">
-        <div className="container">
-          <div className="feature-grid">
-            <div className="feature-card feature-dark">
-              <div className="feature-icon">
-                <Metatron size={30} />
-              </div>
-              <div className="feature-index">01</div>
-              <h3>Customer intelligence</h3>
-              <p>
-                One living profile for every customer, with the signals your
-                team actually needs.
-              </p>
-              <a href="#contact">
-                Explore intelligence <Arrow />
-              </a>
-            </div>
-
-            <div className="feature-card">
-              <div className="feature-icon">↗</div>
-              <div className="feature-index">02</div>
-              <h3>Revenue automation</h3>
-              <p>
-                Build repeatable customer journeys that run automatically in
-                the background.
-              </p>
-              <a href="#contact">
-                Explore automation <Arrow />
-              </a>
-            </div>
-
-            <div className="feature-card">
-              <div className="feature-icon">◎</div>
-              <div className="feature-index">03</div>
-              <h3>Campaign control</h3>
-              <p>
-                Create, launch and measure campaigns without jumping between
-                five different tools.
-              </p>
-              <a href="#contact">
-                Explore campaigns <Arrow />
-              </a>
-            </div>
-
-            <div className="feature-card">
-              <div className="feature-icon">◌</div>
-              <div className="feature-index">04</div>
-              <h3>Smart follow-up</h3>
-              <p>
-                Reach people when the next interaction is most likely to
-                matter.
-              </p>
-              <a href="#contact">
-                Explore follow-up <Arrow />
-              </a>
-            </div>
-
-            <div className="feature-card">
-              <div className="feature-icon">▱</div>
-              <div className="feature-index">05</div>
-              <h3>Clear reporting</h3>
-              <p>
-                Understand what actually creates revenue instead of vanity
-                metrics.
-              </p>
-              <a href="#contact">
-                Explore reporting <Arrow />
-              </a>
-            </div>
-
-            <div className="feature-card">
-              <div className="feature-icon">+</div>
-              <div className="feature-index">06</div>
-              <h3>Built to scale</h3>
-              <p>
-                Start simple and add more customer journeys as your business
-                grows.
-              </p>
-              <a href="#contact">
-                Explore platform <Arrow />
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="dark-system-section">
-        <div className="container dark-system-inner">
-          <div className="system-copy">
-            <div className="eyebrow light-eyebrow">THE SHEFA DIFFERENCE</div>
-            <h2>
-              Less software.
-              <br />
-              <em>More system.</em>
-            </h2>
-            <p>
-              Your team should not need a manual to understand your customer
-              data. SHEFA brings the important pieces together and makes the
-              next action obvious.
-            </p>
-
-            <a className="button button-gold" href="#contact">
-              Talk to SHEFA <Arrow />
-            </a>
-          </div>
-
-          <div className="system-visual">
-            <div className="system-orbit orbit-one" />
-            <div className="system-orbit orbit-two" />
-            <div className="system-orbit orbit-three" />
-            <div className="system-center">
-              <Metatron size={92} />
-              <span>SHEFA</span>
-            </div>
-
-            <div className="orbit-node node-one">CUSTOMER</div>
-            <div className="orbit-node node-two">DATA</div>
-            <div className="orbit-node node-three">AUTOMATION</div>
-            <div className="orbit-node node-four">REVENUE</div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section results-section" id="results">
-        <div className="container">
-          <div className="center-intro">
-            <div className="eyebrow dark-eyebrow">REAL RESULTS</div>
-            <h2>
-              Growth you can
-              <br />
-              <em>actually see.</em>
-            </h2>
-          </div>
-
-          <div className="results-grid">
-            <div className="result-card">
-              <strong>+21.4%</strong>
-              <span>average revenue uplift</span>
-              <small>Across automated customer journeys</small>
-            </div>
-
-            <div className="result-card result-featured">
-              <strong>68.4%</strong>
-              <span>returning customers</span>
-              <small>Measured across active customer cohorts</small>
-            </div>
-
-            <div className="result-card">
-              <strong>3.2×</strong>
-              <span>campaign ROI</span>
-              <small>Compared with manual follow-up</small>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="cta-section" id="contact">
-        <div className="container cta-inner">
-          <div className="cta-mark">
-            <Metatron size={120} />
-          </div>
-
-          <div>
-            <div className="eyebrow light-eyebrow">READY WHEN YOU ARE</div>
-            <h2>
-              Build the system
-              <br />
-              your customers <em>remember.</em>
-            </h2>
-            <p>
-              Tell us about your business and we’ll show you where SHEFA can
-              create the biggest growth opportunity.
-            </p>
-          </div>
-
-          <a className="button button-gold" href="mailto:hello@shefa-nextgen.com">
-            Start a conversation <Arrow />
-          </a>
-        </div>
-      </section>
-
-      <footer className="footer">
-        <div className="container footer-inner">
-          <Logo />
-
-          <div className="footer-links">
-            <a href="#product">Product</a>
-            <a href="#how">How it works</a>
-            <a href="#results">Results</a>
-            <a href="#contact">Contact</a>
-          </div>
-
-          <div className="footer-copy">
-            © {new Date().getFullYear()} SHEFA NextGen Systems
-          </div>
-        </div>
-      </footer>
-    </main>
+      <FooterLogos />
+    </div>
   );
 }
